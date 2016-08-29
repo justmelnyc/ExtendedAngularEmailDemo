@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>AngularHello</title>
+  <link rel="stylesheet" type="text/css" href="./normalize.css" />
+  <link rel="stylesheet" type="text/css" href="./shared.css" />
   <base href="/">
 
   {{#unless environment.production}}
@@ -12,8 +14,8 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <app-root>Loading...</app-root>
-  
+  <app-component>Loading...</app-component>
+
     {{#each scripts.polyfills}}
     <script src="{{.}}"></script>
     {{/each}}
@@ -22,6 +24,6 @@
         System.import('main');
       }).catch(console.error.bind(console));
     </script>
-  
+
 </body>
 </html>

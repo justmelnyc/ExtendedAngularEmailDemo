@@ -1,3 +1,26 @@
-<h1>
-  {{title}}
-</h1>
+<div class="left">
+  <div class="email-list-item"
+       *ngFor="let email of emails"
+       [class.active]="email === selectedEmail"
+       (click)="selectedEmail = email">
+    <div class="background" [@state]="email === selectedEmail ? 'active' : 'hidden'"></div>
+    <h1>{{ email.title }}</h1>
+    <h2>{{ email.author }}</h2>
+  </div>
+  <span class="create-new-email" (click)="showForm = !showForm">
+    Create New Email
+  </span>
+  <email-form [hidden]="!showForm" [author]="defaultAuthor" (newEmail)="onNewEmail($event)"></email-form>
+</div>
+<div class="right">
+  <div class="email-full"
+       *ngFor="let email of emails"
+       [@state]="email === selectedEmail ? 'active' : 'hidden'">
+    <h1>{{ email.title }}</h1>
+    <h2>{{ email.author }}</h2>
+    <hr>
+    <div class="email-body">
+      <pre>{{ email.content }}</pre>
+    </div>
+  </div>
+</div>

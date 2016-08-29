@@ -1,5 +1,5 @@
 /* tslint:disable:no-unused-variable */
-
+/*
 import { addProviders, async, inject } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
@@ -18,3 +18,4 @@ describe('App: AngularHello', () => {
       expect(app.title).toEqual('app works!');
     }));
 });
+*/
